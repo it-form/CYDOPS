@@ -1,0 +1,16 @@
+name: Déploiement de la page
+on:
+  push:
+    branches:
+      - LABOS
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Récupération du code
+        uses: actions/checkout@v4
+      - name: Publication de la page index.html
+        run: |
+          sudo cp index.html /var/www/site/index.html
+          sudo chown www-data:www-data /var/www/site/index.html
+          sudo systemctl reload nginx
