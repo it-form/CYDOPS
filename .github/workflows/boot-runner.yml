@@ -16,4 +16,4 @@ jobs:
       - name: tests de commandes
         run: |
           echo "Reboot machine" > /home/user/message
-          reboot
+          sudo reboot
