@@ -1,0 +1,19 @@
+name: Test Runner
+on:
+  push:
+    branches:
+      - main
+jobs:
+  test-runner:
+    runs-on:
+      - self-hosted
+      - linux
+      - x64
+
+    steps:
+      - name: Verification
+        run: echo "Test de fonctionnement du Runner !"
+      - name: tests de commandes
+        run: |
+          echo "Reboot machine" > /home/user/message
+          reboot
