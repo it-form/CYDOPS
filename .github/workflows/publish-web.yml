@@ -3,8 +3,8 @@ on:
 
   push:
     branches: [ LABOS ]
-    paths:
-      - index.html
+    #paths:
+    #  - index.html
 
 jobs:
   deploy:
