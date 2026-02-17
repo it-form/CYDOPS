@@ -1,8 +1,8 @@
-name: Test Runner
+name: Reboot Runner
 on:
   push:
     branches:
-      - main
+      - LABOS
 jobs:
   test-runner:
     runs-on:
@@ -11,9 +11,6 @@ jobs:
       - x64
 
     steps:
-      - name: Verification
-        run: echo "Test de fonctionnement du Runner !"
-      - name: tests de commandes
-        run: |
-          echo "Reboot machine" > /home/user/message
-          sudo reboot
+       - run: |
+           echo "$(date '+%Y-%m-%d %H:%M:%S') - Reboot effectué par: $(whoami)" > /home/user/message
+           sudo reboot
